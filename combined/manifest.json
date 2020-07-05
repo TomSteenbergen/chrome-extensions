@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "MyFocus",
+  "version": "0.0.1",
+  "permissions": [
+    "background",
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "description": "Focus on the important tasks.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "tab-icon.png",
+    "default_title": "Focus on the important tasks",
+    "default_popup": "popup_timer.html"
+  }
+}
+
