@@ -2,6 +2,8 @@ const filter = {
     urls: [
         '*://twitter.com/*',
         '*://www.twitter.com/*',
+        '*://instagram.com/*',
+        '*://www.instagram.com/*',
         '*://facebook.com/*',
         '*://www.facebook.com/*',
         '*://reddit.com/*',
@@ -18,7 +20,6 @@ const filter = {
         '*://www.youtube.com/*',
         '*://tiktok.com/*',
         '*://www.tiktok.com/*',
-
     ],
 };
 const options = ['blocking'];
