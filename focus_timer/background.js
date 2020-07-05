@@ -39,7 +39,7 @@ function setBlocker(seconds) {
         seconds * 1000);
 }
 
-const focusMinutes = 0.5;
+const focusMinutes = 25;
 
 // If at start-up there is an end time stored, keep blocking websites until end time has reached.
 const now = new Date();
