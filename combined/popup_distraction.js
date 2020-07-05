@@ -5,7 +5,7 @@ let distractions = localStorage.getItem("distractions");
 
 const generateTemplate = distraction => {
     const html = `
-    <li class="list-group-item d-flex justify-content-between align-items-center mx-4">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
       <span>${distraction}</span>
       <i class="far fa-trash-alt delete"></i>
     </li>
