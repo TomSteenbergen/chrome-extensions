@@ -1,14 +1,7 @@
 const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
-let distractions = localStorage.getItem("distractions");
 const search = document.querySelector('.search input');
-
-if (!distractions) {
-    distractions = ["Create your first distraction!"];
-    localStorage.setItem("distractions", JSON.stringify(distractions));
-} else {
-    distractions = JSON.parse(distractions);
-}
+let distractions = localStorage.getItem("distractions");
 
 const generateTemplate = distraction => {
     const html = `
@@ -21,16 +14,25 @@ const generateTemplate = distraction => {
 };
 
 const filterDistractions = term => {
-    // add filtered class
+    // Add filtered class to distractions that include the search term.
     Array.from(list.children)
         .filter(distraction => !distraction.textContent.toLowerCase().includes(term))
         .forEach(distraction => distraction.classList.add('filtered'));
 
-    // remove filtered class
+    // Remove filtered class to distraction that include the search term.
     Array.from(list.children)
         .filter(distraction => distraction.textContent.toLowerCase().includes(term))
         .forEach(distraction => distraction.classList.remove('filtered'));
 };
+
+
+// If there are no distraction yet, input a default distraction.
+if (!distractions) {
+    distractions = ["Create your first distraction!"];
+    localStorage.setItem("distractions", JSON.stringify(distractions));
+} else {
+    distractions = JSON.parse(distractions);
+}
 
 // Add previously stored or default distractions to html
 distractions.forEach(distraction => {
@@ -38,7 +40,7 @@ distractions.forEach(distraction => {
 });
 
 
-// Add listener for adding new distractions
+// Add a listener for adding new distractions.
 addForm.addEventListener('submit', e => {
     e.preventDefault();
     const new_distraction = addForm.add.value.trim();
@@ -51,7 +53,7 @@ addForm.addEventListener('submit', e => {
     }
 });
 
-// Add listener for deleting distractions
+// Add a listener for deleting distractions.
 list.addEventListener('click', e => {
     if (e.target.classList.contains('delete')) {
         let distractions = JSON.parse(localStorage.getItem("distractions"));
@@ -61,7 +63,7 @@ list.addEventListener('click', e => {
     }
 });
 
-// filter distractions event
+// Add a listener for filtering distractions when search is used.
 search.addEventListener('keyup', () => {
     const term = search.value.trim().toLowerCase();
     filterDistractions(term);

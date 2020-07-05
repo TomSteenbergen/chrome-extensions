@@ -49,7 +49,7 @@ if (endTime && endTime > now.getTime()) {
     setBlocker(deltaSeconds);
 }
 
-// Add listener for the toggle button, and use class to add or remove website blocker
+// Add a listener to the port through which we message if the website blocker should be activated.
 chrome.extension.onConnect.addListener(function (port) {
     port.onMessage.addListener(function (message) {
         if (message === true) {

@@ -2,13 +2,6 @@ const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
 let milestones = localStorage.getItem("milestones");
 
-if (!milestones) {
-    milestones = ["Create your first milestone!"];
-    localStorage.setItem("milestones", JSON.stringify(milestones));
-} else {
-    milestones = JSON.parse(milestones);
-}
-
 const generateTemplate = milestone => {
     const html = `
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -28,12 +21,20 @@ const fullAddFormTemplate = "<form class=\"add text-center my-4\">\n" +
     "<input class=\"form-control m-auto\" type=\"text\" name=\"add\" placeholder='Cannot add more milestones!'/>\n" +
     "</form>";
 
-// Add previously stored or default milestones to html
+// If there are no milestones yet, input a default milestone.
+if (!milestones) {
+    milestones = ["Create your first milestone!"];
+    localStorage.setItem("milestones", JSON.stringify(milestones));
+} else {
+    milestones = JSON.parse(milestones);
+}
+
+// Add previously stored or default milestones to HTML.
 milestones.forEach(milestone => {
     generateTemplate(milestone)
 });
 
-// Add listener for adding new milestones
+// Add a listener for adding new milestones.
 addForm.addEventListener('submit', e => {
     e.preventDefault();
     const new_milestone = addForm.add.value.trim();
@@ -45,11 +46,12 @@ addForm.addEventListener('submit', e => {
         generateTemplate(new_milestone);
         addForm.reset();
     } else if (new_milestone.length) {
+        // Update HTML to show a warning in case a fourth milestone is entered.
         addForm.innerHTML = fullAddFormTemplate
     }
 });
 
-// Add listener for deleting milestones
+// Add a listener for deleting milestones.
 list.addEventListener('click', e => {
     if (e.target.classList.contains('delete')) {
         let milestones = JSON.parse(localStorage.getItem("milestones"));
@@ -57,6 +59,7 @@ list.addEventListener('click', e => {
         localStorage.setItem("milestones", JSON.stringify(milestones));
         e.target.parentElement.remove();
     }
+    // Update the HTML if there is room to add more milestones.
     if (JSON.parse(localStorage.getItem("milestones")).length <= 2) {
         addForm.innerHTML = addFormTemplate
     }
