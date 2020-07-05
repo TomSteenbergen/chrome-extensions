@@ -14,6 +14,7 @@ body {
     max-width: 600px;
 }
 
+/* Input bars */
 input[type=text],
 input[type=text]:focus {
     color: #fff;
@@ -27,32 +28,39 @@ input[type=text]:focus {
     display: none;
 }
 
+/* Base class for centralized body */
 .container {
     max-height: 400px;
     max-width: 600px;
 }
 
+/* The individual items on the distraction list or the milestones tracker */
 .todos li {
     background: #737373;
 }
 
+/* Adjust the cursor when hovering over the delete icon */
 .delete {
     cursor: pointer;
 }
 
+/* The delete icon for the distraction list and the milestones tracker */
 .fa-trash-alt:hover {
     color: red;
 }
 
+/* Special class to add on filtered out items during search */
 .filtered {
     display: none !important;
 }
 
+/* The focus countdown timer */
 .clock {
     font-size: 2em;
     color: white;
 }
 
+/* The row and column classes for the two column layout */
 .row {
     display: flex;
 }
@@ -61,6 +69,7 @@ input[type=text]:focus {
     flex: 30%;
 }
 
+/* The milestones tracker icon in the sidebar menu */
 .fa-bullseye {
     color: #737373;
 }
@@ -69,6 +78,7 @@ input[type=text]:focus {
     color: white
 }
 
+/* The focus timer icon in the sidebar menu */
 .fa-clock {
     color: #737373;
 }
@@ -77,6 +87,7 @@ input[type=text]:focus {
     color: white
 }
 
+/* The distraction list icon in the sidebar menu */
 .fa-list {
     color: #737373;
 }
@@ -85,6 +96,7 @@ input[type=text]:focus {
     color: white
 }
 
+/* The play button for the timer */
 .fa-play {
     color: white;
     padding: 17px;
@@ -95,6 +107,7 @@ input[type=text]:focus {
     color: green;
 }
 
+/* The stop button for the timer */
 .fa-stop {
     color: white;
     padding: 17px;
