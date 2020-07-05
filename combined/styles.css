@@ -22,6 +22,7 @@ input[type=text]:focus {
     max-width: 400px;
 }
 
+/* Remove scrollbar but keep functionality */
 ::-webkit-scrollbar {
     display: none;
 }
@@ -58,6 +59,30 @@ input[type=text]:focus {
 
 .column {
     flex: 30%;
+}
+
+.fa-bullseye {
+    color: #737373;
+}
+
+.fa-bullseye:hover {
+    color: white
+}
+
+.fa-clock {
+    color: #737373;
+}
+
+.fa-clock:hover {
+    color: white
+}
+
+.fa-list {
+    color: #737373;
+}
+
+.fa-list:hover {
+    color: white
 }
 
 .fa-play {

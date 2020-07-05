@@ -31,5 +31,5 @@ toggle.addEventListener('click', e => {
     port.postMessage(e.target.classList.contains("fa-play"))
 });
 
-// Refresh the timer in the popup every 100 milliseconds.
-setInterval(tick, 100);
+// Refresh the timer in the popup every 250 milliseconds.
+setInterval(tick, 250);
