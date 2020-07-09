@@ -23,7 +23,7 @@
   "browser_action": {
     "default_icon": "tab-icon.png",
     "default_title": "MyFocus",
-    "default_popup": "popup_timer.html"
+    "default_popup": "popup_focus.html"
   }
 }
 

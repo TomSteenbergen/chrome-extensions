@@ -4,6 +4,7 @@ html {
     width: 600px;
     max-height: 400px;
     max-width: 600px;
+    overflow:scroll
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     width: 600px;
     max-height: 400px;
     max-width: 600px;
+    overflow:scroll
 }
 
 /* Input bars */
