@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "MyFocus",
+  "name": "Assistant",
   "version": "0.0.1",
   "permissions": [
     "background",
@@ -21,8 +21,8 @@
     "128": "icon128.png"
   },
   "browser_action": {
-    "default_icon": "tab-icon.png",
-    "default_title": "MyFocus",
+    "default_icon": "icon128.png",
+    "default_title": "Assistant",
     "default_popup": "popup_focus.html"
   }
 }
