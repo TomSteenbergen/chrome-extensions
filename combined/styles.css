@@ -25,6 +25,13 @@ input[type=text]:focus {
     max-width: 400px;
 }
 
+ul li{
+    list-style-type: none;
+}
+
+a {
+    color: #009ee2
+}
 /* Remove scrollbar but keep functionality */
 ::-webkit-scrollbar {
     display: none;
@@ -95,6 +102,15 @@ input[type=text]:focus {
 }
 
 .fa-list:hover {
+     color: white
+ }
+
+/* The help icon in the sidebar menu */
+.fa-info-circle {
+    color: #737373;
+}
+
+.fa-info-circle:hover {
     color: white
 }
 
@@ -106,7 +122,7 @@ input[type=text]:focus {
 }
 
 .fa-play:hover {
-    color: green;
+    color: #30bf2a;
 }
 
 /* The stop button for the timer */
