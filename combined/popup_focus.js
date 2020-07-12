@@ -2,6 +2,40 @@ const clock = document.querySelector('.clock');
 const focusMinutes = 25;
 const toggle = document.getElementById('toggle');
 
+
+
+let counter = localStorage.getItem("counter");
+
+
+
+
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+if (counter === null){
+    localStorage.setItem("counter", JSON.stringify(0));
+}
+
+
+
+
+
+
 const tick = () => {
     const endTime = JSON.parse(localStorage.getItem("endTime"));
     const now = new Date();
@@ -29,6 +63,18 @@ const tick = () => {
 const port = chrome.extension.connect({name: "Timer"});
 toggle.addEventListener('click', e => {
     port.postMessage(e.target.classList.contains("fa-play"))
+
+        
+    let counter = JSON.parse(localStorage.getItem("counter"));
+    console.log(counter)
+    counter++;
+    console.log(counter)
+    localStorage.setItem("counter", JSON.stringify(counter))
+    if (counter == 4){
+        modal.style.display = "block";
+        localStorage.setItem("counter", JSON.stringify(0))
+    }
+
 });
 
 // Create the timer when you open the popup, and refresh every 500 milliseconds.
