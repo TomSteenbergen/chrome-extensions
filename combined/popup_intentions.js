@@ -42,7 +42,7 @@ addForm.addEventListener('submit', e => {
     let intentions = JSON.parse(localStorage.getItem("intentions"));
     // Only allow a maximum of 3 intentions.
     if (newIntention.text.length && intentions.length < 3) {
-        intentions.push(newIntentios);
+        intentions.push(newIntention);
         localStorage.setItem("intentions", JSON.stringify(intentions));
         generateTemplate(newIntention);
         addForm.reset();
