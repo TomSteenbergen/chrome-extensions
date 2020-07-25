@@ -3,7 +3,6 @@
   "name": "Assistant",
   "version": "0.0.1",
   "permissions": [
-    "background",
     "storage",
     "webRequest",
     "webRequestBlocking",
