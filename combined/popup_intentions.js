@@ -61,7 +61,7 @@ list.addEventListener('click', e => {
         e.target.parentElement.remove();
     }
     // Update the HTML if there is room to add more intentions.
-    if (JSON.parse(localStorage.getItem("intentions")).text.length <= 2) {
+    if (JSON.parse(localStorage.getItem("intentions")).length <= 2) {
         addForm.innerHTML = addFormTemplate
     }
 });
