@@ -38,15 +38,15 @@ intentions.forEach(intention => {
 // Add a listener for adding new intentions.
 addForm.addEventListener('submit', e => {
     e.preventDefault();
-    const newIntentions = {text: addForm.add.value.trim(), createTimestamp: new Date()};
+    const newIntention = {text: addForm.add.value.trim(), createTimestamp: new Date()};
     let intentions = JSON.parse(localStorage.getItem("intentions"));
     // Only allow a maximum of 3 intentions.
-    if (newIntentions.text.length && intentions.length < 3) {
-        intentions.push(newIntentions);
+    if (newIntention.text.length && intentions.length < 3) {
+        intentions.push(newIntentios);
         localStorage.setItem("intentions", JSON.stringify(intentions));
-        generateTemplate(newIntentions);
+        generateTemplate(newIntention);
         addForm.reset();
-    } else if (newIntentions.text.length) {
+    } else if (newIntention.text.length) {
         // Update HTML to show a warning in case a fourth intention is entered.
         addForm.innerHTML = fullAddFormTemplate
     }
